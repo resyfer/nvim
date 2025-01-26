@@ -4,6 +4,8 @@ vim.g.maplocalleader = "\\"
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.o.scrolloff = 999999
+vim.opt.colorcolumn = "80"
+
 
 vim.api.nvim_set_keymap('n', 'k', 'kzz', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'j', 'jzz', { noremap = true, silent = true })
