@@ -20,13 +20,13 @@ return {
       sorter = "case_sensitive",
     },
     view = {
-      width = 50,
+      width = 60,
     },
     renderer = {
       group_empty = true,
     },
     filters = {
-      dotfiles = true,
+      dotfiles = false,
     },
     git = {
       enable = true,
