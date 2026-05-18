@@ -69,14 +69,20 @@ require("mason-lspconfig").setup {
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- LSP Diagnostics --
 vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Toggle line diagnostics' })
 vim.keymap.set('n', '<leader>dD', '<cmd>Telescope diagnostics<cr>', { desc = 'Workspace diagnostics list' })
 
+-- Telescope --
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+-- LSP --
+
+vim.keymap.set('n', '<leader>li', vim.lsp.buf.hover, { desc = 'LSP Hover Type Info' })
 
 -- Explorer --
 vim.keymap.set("n", "<leader>ee", function()
@@ -122,3 +128,6 @@ vim.keymap.set('n', '<leader>cn', '<C-i>', { desc = 'Go to next cursor position'
 -- Go To --
 vim.keymap.set('n', '<leader>gd', '<cmd>Telescope lsp_definitions<cr>', { desc = 'LSP Go to Definition' })
 vim.keymap.set('n', '<leader>gr', '<cmd>Telescope lsp_references<cr>', { desc = 'LSP Go to Usages (References)' })
+
+vim.o.winborder = 'rounded'
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#88ccff", bg = "NONE" })
